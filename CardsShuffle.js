@@ -13,7 +13,7 @@ function shuffle(array) {
 
     [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
   }
-  return array;
+  posArray = array;
 }
 
 (async function () {  // Enables async/await in JS [part 1]
@@ -33,7 +33,7 @@ function shuffle(array) {
   posArray = [sourcePos0, sourcePos1, sourcePos2, sourcePos3, sourcePos4, sourcePos5, sourcePos6, sourcePos7]
   //shuffle(posArray);
 
-  triggerShuffle.subscribe(shuffle(posArray));
+  triggerShuffle.subscribe(() => shuffle(posArray));
 
   Patches.inputs.setVector('Pos_0_Shuffled', posArray[0]);
   Patches.inputs.setVector('Pos_1_Shuffled', posArray[1]);
